@@ -93,8 +93,10 @@ private func noteToNote(
     snr: Double
 ) -> [Int?] {
     let rate = configuration.sampleRate
-    let outcomes = parallelMap(startNotes.count) { index -> [Int?] in
-        let midi = startNotes[index]
+    // Both notes have to be inside the C2 to C6 range the detector is measured on.
+    let starts = startNotes.filter { (36...84).contains($0 + interval) }
+    let outcomes = parallelMap(starts.count) { index -> [Int?] in
+        let midi = starts[index]
         var rng = SplitMix64(seed: UInt64(midi) &* 7 &+ UInt64(bitPattern: Int64(interval &+ 100)))
         return (0..<8).map { _ in
             // A random onset phase against the hop grid, so the figure is not one lucky alignment.

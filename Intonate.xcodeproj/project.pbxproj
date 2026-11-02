@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A7E0000000000000000000C /* IntonateDSP in Frameworks */ = {isa = PBXBuildFile; productRef = 1A7E00000000000000000006 /* IntonateDSP */; };
+		1A7E0000000000000000000D /* IntonateSynth in Frameworks */ = {isa = PBXBuildFile; productRef = 1A7E00000000000000000007 /* IntonateSynth */; };
+		1A7E0000000000000000000E /* IntonateTraining in Frameworks */ = {isa = PBXBuildFile; productRef = 1A7E00000000000000000008 /* IntonateTraining */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A7E00000000000000000023 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A7E00000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A7E00000000000000000002;
+			remoteInfo = Intonate;
+		};
+		1A7E00000000000000000024 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A7E00000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A7E00000000000000000002;
+			remoteInfo = Intonate;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1A7E00000000000000000012 /* Intonate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Intonate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A7E00000000000000000013 /* IntonateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntonateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A7E00000000000000000014 /* IntonateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IntonateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1A7E00000000000000000015 /* Intonate */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Intonate;
+			sourceTree = "<group>";
+		};
+		1A7E00000000000000000016 /* IntonateTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = IntonateTests;
+			sourceTree = "<group>";
+		};
+		1A7E00000000000000000017 /* IntonateUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = IntonateUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A7E00000000000000000018 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A7E0000000000000000000C /* IntonateDSP in Frameworks */,
+				1A7E0000000000000000000D /* IntonateSynth in Frameworks */,
+				1A7E0000000000000000000E /* IntonateTraining in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7E00000000000000000019 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7E0000000000000000001A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A7E0000000000000000001B = {
+			isa = PBXGroup;
+			children = (
+				1A7E00000000000000000015 /* Intonate */,
+				1A7E00000000000000000016 /* IntonateTests */,
+				1A7E00000000000000000017 /* IntonateUITests */,
+				1A7E0000000000000000001C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1A7E0000000000000000001C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A7E00000000000000000012 /* Intonate.app */,
+				1A7E00000000000000000013 /* IntonateTests.xctest */,
+				1A7E00000000000000000014 /* IntonateUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A7E00000000000000000002 /* Intonate */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A7E00000000000000000028 /* Build configuration list for PBXNativeTarget "Intonate" */;
+			buildPhases = (
+				1A7E0000000000000000001D /* Sources */,
+				1A7E00000000000000000018 /* Frameworks */,
+				1A7E0000000000000000001E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1A7E00000000000000000015 /* Intonate */,
+			);
+			name = Intonate;
+			packageProductDependencies = (
+				1A7E00000000000000000006 /* IntonateDSP */,
+				1A7E00000000000000000007 /* IntonateSynth */,
+				1A7E00000000000000000008 /* IntonateTraining */,
+			);
+			productName = Intonate;
+			productReference = 1A7E00000000000000000012 /* Intonate.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1A7E00000000000000000003 /* IntonateTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A7E00000000000000000029 /* Build configuration list for PBXNativeTarget "IntonateTests" */;
+			buildPhases = (
+				1A7E0000000000000000001F /* Sources */,
+				1A7E00000000000000000019 /* Frameworks */,
+				1A7E00000000000000000020 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A7E00000000000000000025 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1A7E00000000000000000016 /* IntonateTests */,
+			);
+			name = IntonateTests;
+			packageProductDependencies = (
+			);
+			productName = IntonateTests;
+			productReference = 1A7E00000000000000000013 /* IntonateTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1A7E00000000000000000004 /* IntonateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A7E0000000000000000002A /* Build configuration list for PBXNativeTarget "IntonateUITests" */;
+			buildPhases = (
+				1A7E00000000000000000021 /* Sources */,
+				1A7E0000000000000000001A /* Frameworks */,
+				1A7E00000000000000000022 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1A7E00000000000000000026 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				1A7E00000000000000000017 /* IntonateUITests */,
+			);
+			name = IntonateUITests;
+			packageProductDependencies = (
+			);
+			productName = IntonateUITests;
+			productReference = 1A7E00000000000000000014 /* IntonateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A7E00000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					1A7E00000000000000000003 = {
+						TestTargetID = 1A7E00000000000000000002;
+					};
+					1A7E00000000000000000004 = {
+						TestTargetID = 1A7E00000000000000000002;
+					};
+				};
+			};
+			buildConfigurationList = 1A7E00000000000000000027 /* Build configuration list for PBXProject "Intonate" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1A7E0000000000000000001B;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				1A7E00000000000000000005 /* XCLocalSwiftPackageReference "Packages/IntonateCore" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1A7E0000000000000000001C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A7E00000000000000000002 /* Intonate */,
+				1A7E00000000000000000003 /* IntonateTests */,
+				1A7E00000000000000000004 /* IntonateUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A7E0000000000000000001E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7E00000000000000000020 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7E00000000000000000022 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A7E0000000000000000001D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7E0000000000000000001F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1A7E00000000000000000021 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1A7E00000000000000000025 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A7E00000000000000000002 /* Intonate */;
+			targetProxy = 1A7E00000000000000000023 /* PBXContainerItemProxy */;
+		};
+		1A7E00000000000000000026 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A7E00000000000000000002 /* Intonate */;
+			targetProxy = 1A7E00000000000000000024 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1A7E0000000000000000002B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = targeted;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		1A7E0000000000000000002C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_STRICT_CONCURRENCY = targeted;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1A7E0000000000000000002D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Intonate;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Intonate listens to your singing to measure its pitch. Audio stays on this device and is not recorded.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matejpopovski.Intonate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+			};
+			name = Debug;
+		};
+		1A7E0000000000000000002E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Intonate;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Intonate listens to your singing to measure its pitch. Audio stays on this device and is not recorded.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matejpopovski.Intonate;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+			};
+			name = Release;
+		};
+		1A7E0000000000000000002F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matejpopovski.IntonateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Intonate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Intonate";
+			};
+			name = Debug;
+		};
+		1A7E00000000000000000030 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matejpopovski.IntonateTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Intonate.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Intonate";
+			};
+			name = Release;
+		};
+		1A7E00000000000000000031 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matejpopovski.IntonateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_TARGET_NAME = Intonate;
+			};
+			name = Debug;
+		};
+		1A7E00000000000000000032 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.matejpopovski.IntonateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TEST_TARGET_NAME = Intonate;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A7E00000000000000000027 /* Build configuration list for PBXProject "Intonate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A7E0000000000000000002B /* Debug */,
+				1A7E0000000000000000002C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A7E00000000000000000028 /* Build configuration list for PBXNativeTarget "Intonate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A7E0000000000000000002D /* Debug */,
+				1A7E0000000000000000002E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A7E00000000000000000029 /* Build configuration list for PBXNativeTarget "IntonateTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A7E0000000000000000002F /* Debug */,
+				1A7E00000000000000000030 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A7E0000000000000000002A /* Build configuration list for PBXNativeTarget "IntonateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A7E00000000000000000031 /* Debug */,
+				1A7E00000000000000000032 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		1A7E00000000000000000005 /* XCLocalSwiftPackageReference "Packages/IntonateCore" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/IntonateCore;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1A7E00000000000000000006 /* IntonateDSP */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = IntonateDSP;
+		};
+		1A7E00000000000000000007 /* IntonateSynth */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = IntonateSynth;
+		};
+		1A7E00000000000000000008 /* IntonateTraining */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = IntonateTraining;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1A7E00000000000000000001 /* Project object */;
+}

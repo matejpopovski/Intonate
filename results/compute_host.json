@@ -1,0 +1,48 @@
+{
+  "budgetMicroseconds" : 5805,
+  "budgetNote" : "budgetShare is the p50 as a fraction of one pitch hop, the real-time deadline",
+  "host" : {
+    "cpu" : "Apple M3 Max",
+    "memoryGB" : 36,
+    "note" : "native macOS release build on one core, not a phone and not the simulator",
+    "os" : "Version 26.6.2 (Build 25G83)"
+  },
+  "realTimeFactor" : 191.4,
+  "rows" : [
+    {
+      "budgetShare" : 0.0074,
+      "iterations" : 30000,
+      "label" : "YIN direct, W=1024",
+      "p50Microseconds" : 43.13,
+      "p99Microseconds" : 86.5
+    },
+    {
+      "budgetShare" : 0.014,
+      "iterations" : 30000,
+      "label" : "YIN direct, W=2048",
+      "p50Microseconds" : 81.04,
+      "p99Microseconds" : 171.92
+    },
+    {
+      "budgetShare" : 0.0046,
+      "iterations" : 30000,
+      "label" : "YIN fft, W=1024",
+      "p50Microseconds" : 26.79,
+      "p99Microseconds" : 70.54
+    },
+    {
+      "budgetShare" : 0.0085,
+      "iterations" : 30000,
+      "label" : "YIN fft, W=2048",
+      "p50Microseconds" : 49.46,
+      "p99Microseconds" : 61.79
+    },
+    {
+      "budgetShare" : 0.0007,
+      "iterations" : 30000,
+      "label" : "spectrum, 4096-point FFT to 384 bands",
+      "p50Microseconds" : 4.17,
+      "p99Microseconds" : 5.42
+    }
+  ]
+}

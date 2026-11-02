@@ -1,6 +1,28 @@
 import CAtomicShim
 import Foundation
 
+/// A 64-bit value shared between threads without a lock, for parameters the audio thread reads.
+public final class AtomicWord: @unchecked Sendable {
+    private let storage: UnsafeMutablePointer<UInt64>
+
+    public init(_ value: UInt64 = 0) {
+        storage = .allocate(capacity: 1)
+        storage.initialize(to: value)
+    }
+
+    deinit {
+        storage.deallocate()
+    }
+
+    public func load() -> UInt64 {
+        intonate_load_acquire(storage)
+    }
+
+    public func store(_ value: UInt64) {
+        intonate_store_release(storage, value)
+    }
+}
+
 /// Single-producer, single-consumer ring of `Float` that the audio thread writes without locking.
 ///
 /// The write path takes no lock and allocates nothing, because a priority inversion on the audio
@@ -19,6 +41,7 @@ public final class SampleRing: @unchecked Sendable {
     private let writeIndex: UnsafeMutablePointer<UInt64>
     private let readIndex: UnsafeMutablePointer<UInt64>
     private let droppedCount: UnsafeMutablePointer<UInt64>
+    private let writeTimestamp = AtomicWord()
 
     /// `minimumCapacity` is rounded up to a power of two so that wrapping is a mask, not a division.
     public init(minimumCapacity: Int) {
@@ -55,6 +78,15 @@ public final class SampleRing: @unchecked Sendable {
         intonate_load_relaxed(droppedCount)
     }
 
+    /// Host time of the newest write, as recorded by the producer. Only the latency measurement uses it.
+    public var lastWriteHostTime: UInt64 {
+        writeTimestamp.load()
+    }
+
+    public func stampWrite(hostTime: UInt64) {
+        writeTimestamp.store(hostTime)
+    }
+
     /// Producer side. Returns how many samples were accepted; the remainder are counted as dropped.
     @discardableResult
     public func write(_ source: UnsafePointer<Float>, count: Int) -> Int {
@@ -75,6 +107,18 @@ public final class SampleRing: @unchecked Sendable {
         }
         intonate_store_release(writeIndex, write &+ UInt64(accepted))
         return accepted
+    }
+
+    /// Producer side, for fixed-size records: writes all of them or none, so that the consumer's
+    /// reads stay aligned to record boundaries however far behind it falls.
+    public func writeRecord(_ source: UnsafePointer<Float>, count: Int) -> Bool {
+        let free = capacity - Int(intonate_load_relaxed(writeIndex) &- intonate_load_acquire(readIndex))
+        guard count <= free else {
+            intonate_add_relaxed(droppedCount, UInt64(count))
+            return false
+        }
+        write(source, count: count)
+        return true
     }
 
     /// Consumer side. Returns how many samples were copied into `destination`.

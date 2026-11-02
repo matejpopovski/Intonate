@@ -184,3 +184,33 @@ final class YINDetectorTests: XCTestCase {
         XCTAssertLessThan(worst, 8)
     }
 }
+
+extension YINDetectorTests {
+    /// With no dip under the threshold, plain YIN takes the deepest one, which at this SNR is usually
+    /// a subharmonic. Taking the first dip near the deepest should land on the true period.
+    func testFallbackPrefersTheFundamentalOverASubharmonicInHeavyNoise() {
+        func octaveErrors(margin: Float) -> Int {
+            let yin = YINDetector(configuration: YINConfiguration(fallbackMargin: margin))
+            var rng = SplitMix64(seed: 17)
+            var errors = 0
+            for midi in stride(from: 40, through: 76, by: 2) {
+                let truth = Tuning.standard.frequency(midi: Double(midi))
+                let clean = VoiceSynth.clip(
+                    contour: .constant(truth),
+                    duration: 0.06,
+                    sampleRate: 44_100,
+                    timbre: .vowelAh,
+                    seed: UInt64(midi)
+                )
+                let noisy = Signal.mix(clean, snrDB: 5, kind: .white, rng: &rng)
+                if let result = noisy.withUnsafeBufferPointer({ yin.estimate($0) }),
+                    abs(cents(result.frequency, relativeTo: truth)) > 600
+                {
+                    errors += 1
+                }
+            }
+            return errors
+        }
+        XCTAssertLessThan(octaveErrors(margin: 0.1), octaveErrors(margin: 0))
+    }
+}

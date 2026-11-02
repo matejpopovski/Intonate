@@ -47,6 +47,24 @@ public struct NoteResult: Hashable, Sendable {
     public let inTuneFraction: Double
     /// 0...100, with unvoiced frames counted as zero marks.
     public let score: Double
+
+    public init(
+        note: TimedNote,
+        voicedFraction: Double,
+        meanCents: Double?,
+        meanAbsoluteCents: Double?,
+        spreadCents: Double?,
+        inTuneFraction: Double,
+        score: Double
+    ) {
+        self.note = note
+        self.voicedFraction = voicedFraction
+        self.meanCents = meanCents
+        self.meanAbsoluteCents = meanAbsoluteCents
+        self.spreadCents = spreadCents
+        self.inTuneFraction = inTuneFraction
+        self.score = score
+    }
 }
 
 public struct PerformanceReport: Hashable, Sendable {
@@ -57,6 +75,20 @@ public struct PerformanceReport: Hashable, Sendable {
     /// Mean signed error over sung frames, so a singer learns they run flat or sharp overall.
     public let tendencyCents: Double?
     public let inTuneFraction: Double
+
+    public init(
+        notes: [NoteResult],
+        score: Double,
+        meanAbsoluteCents: Double?,
+        tendencyCents: Double?,
+        inTuneFraction: Double
+    ) {
+        self.notes = notes
+        self.score = score
+        self.meanAbsoluteCents = meanAbsoluteCents
+        self.tendencyCents = tendencyCents
+        self.inTuneFraction = inTuneFraction
+    }
 }
 
 /// Compares a pitch stream with an exercise timeline. It sees only `PitchFrame`s, so the same scorer

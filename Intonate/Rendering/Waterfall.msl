@@ -1,0 +1,169 @@
+#include <metal_stdlib>
+
+using namespace metal;
+
+// These three mirror ShaderTypes.swift. WaterfallRendererTests compares the layouts through pipeline
+// reflection, because this source is compiled at run time and no shared header can tie them together.
+
+struct WaterfallUniforms {
+    float headRow;      // Position of the now line in the ring texture, in rows, with a fraction.
+    float historyRows;  // Height of the ring texture.
+    float visibleRows;  // Rows between the left edge and the now line.
+    float nowX;         // Now line position, 0 at left and 1 at right.
+    float bandLow;      // Texture u at the bottom of the view.
+    float bandHigh;     // Texture u at the top of the view.
+    float midiLow;      // MIDI note at the bottom of the view.
+    float midiHigh;     // MIDI note at the top of the view.
+    float maxAge;       // Rows behind the head that hold audio; older rows were never written.
+    float viewHeight;   // Pixels, for one-pixel guide lines.
+};
+
+struct OverlayInstance {
+    float4 rect;        // x0, y0, x1, y1 in pixels, y down.
+    float4 color;       // Premultiplied.
+    float cornerRadius;
+    float softness;     // Width of the falloff outside the rectangle, for the glow.
+};
+
+struct TrailVertex {
+    float2 position;    // Pixels, y down.
+    float side;         // -1 and 1 across the ribbon, for the soft edge.
+    float pad;
+    float4 color;       // Premultiplied.
+};
+
+struct QuadOut {
+    float4 position [[position]];
+    float2 uv;
+};
+
+// One oversized triangle, which covers the view without a seam along a quad's diagonal.
+vertex QuadOut waterfall_vertex(uint vertexID [[vertex_id]]) {
+    const float2 positions[3] = {float2(-1, -1), float2(3, -1), float2(-1, 3)};
+    QuadOut out;
+    out.position = float4(positions[vertexID], 0, 1);
+    out.uv = (positions[vertexID] + 1) * 0.5;
+    return out;
+}
+
+// House lights going down: black, velvet, crimson, brass, then a warm white at the hottest partials.
+static float3 stageColor(float value) {
+    const float3 stops[5] = {
+        float3(0.020, 0.016, 0.035),
+        float3(0.150, 0.045, 0.200),
+        float3(0.640, 0.130, 0.230),
+        float3(0.960, 0.560, 0.150),
+        float3(1.000, 0.950, 0.780),
+    };
+    float position = saturate(value) * 4;
+    int index = min(int(position), 3);
+    return mix(stops[index], stops[index + 1], position - float(index));
+}
+
+// Maps the -90...0 dB intensity onto the colour ramp so that the room's noise floor stays dark
+// and a sung harmonic at about -30 dBFS lands in the bright part.
+static float toneMap(float intensity) {
+    float value = saturate((intensity - 0.42) / 0.5);
+    return pow(value, 1.15);
+}
+
+fragment float4 waterfall_fragment(QuadOut in [[stage_in]],
+                                   constant WaterfallUniforms &uniforms [[buffer(0)]],
+                                   texture2d<float> history [[texture(0)]],
+                                   sampler ringSampler [[sampler(0)]]) {
+    float2 uv = in.uv;
+    float3 color = float3(0.020, 0.016, 0.035);
+
+    if (uv.x < uniforms.nowX) {
+        float age = (uniforms.nowX - uv.x) / uniforms.nowX * uniforms.visibleRows;
+        float row = uniforms.headRow - age;
+        if (age < uniforms.maxAge) {
+            float band = mix(uniforms.bandLow, uniforms.bandHigh, uv.y);
+            float intensity = history.sample(ringSampler, float2(band, (row + 0.5) / uniforms.historyRows)).r;
+            color = stageColor(toneMap(intensity));
+        }
+        // The hall dims towards the oldest audio, so the eye stays near the now line.
+        color *= mix(0.45, 1.0, smoothstep(0.0, 0.6, uv.x / uniforms.nowX));
+    } else {
+        // Ahead of the now line there is no audio yet, only the dark of the stage.
+        float falloff = (uv.x - uniforms.nowX) / (1.0 - uniforms.nowX);
+        color = mix(float3(0.075, 0.040, 0.085), float3(0.020, 0.016, 0.035), smoothstep(0.0, 0.8, falloff));
+    }
+
+    // A faint staff of semitone lines, with each C slightly stronger.
+    float span = uniforms.midiHigh - uniforms.midiLow;
+    float midi = mix(uniforms.midiLow, uniforms.midiHigh, uv.y);
+    float pixelsPerSemitone = uniforms.viewHeight / span;
+    float distanceToLine = abs(fract(midi + 0.5) - 0.5) * pixelsPerSemitone;
+    float line = 1.0 - smoothstep(0.0, 1.2, distanceToLine);
+    float nearest = floor(midi + 0.5);
+    bool isC = fmod(nearest, 12.0) < 0.5;
+    color += float3(0.95, 0.80, 0.55) * line * (isC ? 0.16 : 0.055);
+
+    return float4(color, 1);
+}
+
+struct OverlayOut {
+    float4 position [[position]];
+    float2 pixel;
+    float4 rect;
+    float4 color;
+    float cornerRadius;
+    float softness;
+};
+
+vertex OverlayOut overlay_vertex(uint vertexID [[vertex_id]],
+                                 uint instanceID [[instance_id]],
+                                 constant OverlayInstance *instances [[buffer(0)]],
+                                 constant float2 &viewSize [[buffer(1)]]) {
+    const float2 corners[4] = {float2(0, 0), float2(1, 0), float2(0, 1), float2(1, 1)};
+    OverlayInstance instance = instances[instanceID];
+    float2 lower = instance.rect.xy - instance.softness;
+    float2 upper = instance.rect.zw + instance.softness;
+    float2 pixel = mix(lower, upper, corners[vertexID]);
+
+    OverlayOut out;
+    out.position = float4(pixel.x / viewSize.x * 2 - 1, 1 - pixel.y / viewSize.y * 2, 0, 1);
+    out.pixel = pixel;
+    out.rect = instance.rect;
+    out.color = instance.color;
+    out.cornerRadius = instance.cornerRadius;
+    out.softness = instance.softness;
+    return out;
+}
+
+// A signed distance to a rounded rectangle gives a crisp body and a glow from one formula.
+fragment float4 overlay_fragment(OverlayOut in [[stage_in]]) {
+    float2 center = (in.rect.xy + in.rect.zw) * 0.5;
+    float2 halfSize = (in.rect.zw - in.rect.xy) * 0.5;
+    float2 q = abs(in.pixel - center) - halfSize + in.cornerRadius;
+    float distance = length(max(q, 0.0)) + min(max(q.x, q.y), 0.0) - in.cornerRadius;
+    float body = 1.0 - smoothstep(-1.0, 1.0, distance);
+    float glow = in.softness > 0 ? pow(saturate(1.0 - distance / in.softness), 2.0) * 0.4 : 0;
+    return in.color * max(body, glow);
+}
+
+struct TrailOut {
+    float4 position [[position]];
+    float side;
+    float4 color;
+};
+
+vertex TrailOut trail_vertex(uint vertexID [[vertex_id]],
+                             constant TrailVertex *vertices [[buffer(0)]],
+                             constant float2 &viewSize [[buffer(1)]]) {
+    TrailVertex input = vertices[vertexID];
+    TrailOut out;
+    out.position = float4(input.position.x / viewSize.x * 2 - 1, 1 - input.position.y / viewSize.y * 2, 0, 1);
+    out.side = input.side;
+    out.color = input.color;
+    return out;
+}
+
+// A bright core inside a wide falloff, which reads as a beam of light rather than a line.
+fragment float4 trail_fragment(TrailOut in [[stage_in]]) {
+    float edge = abs(in.side);
+    float core = 1.0 - smoothstep(0.18, 0.34, edge);
+    float halo = pow(1.0 - edge, 2.0) * 0.55;
+    return in.color * (core + halo);
+}

@@ -1,0 +1,60 @@
+{
+  "analysisPerChunkMs" : {
+    "count" : 3010,
+    "max" : 0.186,
+    "p50" : 0.081,
+    "p95" : 0.119,
+    "p99" : 0.145
+  },
+  "analysisPerPitchFrameMs" : {
+    "count" : 3007,
+    "max" : 0.132,
+    "p50" : 0.044,
+    "p95" : 0.069,
+    "p99" : 0.094
+  },
+  "build" : "Release",
+  "device" : "iPhone18,1",
+  "droppedDrawables" : 0,
+  "droppedSamples" : 0,
+  "encodeMs" : {
+    "count" : 1798,
+    "max" : 0.314,
+    "p50" : 0.049,
+    "p95" : 0.074,
+    "p99" : 0.099
+  },
+  "frameIntervalMs" : {
+    "count" : 1797,
+    "max" : 32.563,
+    "p50" : 16.668,
+    "p95" : 16.717,
+    "p99" : 16.843
+  },
+  "frameWaitMs" : {
+    "count" : 1797,
+    "max" : 97.439,
+    "p50" : 12.956,
+    "p95" : 15.753,
+    "p99" : 16.27
+  },
+  "gpuMs" : {
+    "count" : 1798,
+    "max" : 8.155,
+    "p50" : 0.148,
+    "p95" : 0.194,
+    "p99" : 0.285
+  },
+  "host" : "Apple M3 Max, 36 GB",
+  "note" : "Measured in the iOS Simulator on the host CPU and GPU with a synthesized voice. These are not phone figures, and they exclude audio capture hardware and display scan-out.",
+  "rendererSetupMs" : 1316,
+  "ringWaitMs" : {
+    "count" : 3010,
+    "max" : 6.253,
+    "p50" : 4.656,
+    "p95" : 5.627,
+    "p99" : 5.949
+  },
+  "runtime" : "iOS 26.5 simulator",
+  "seconds" : 30
+}

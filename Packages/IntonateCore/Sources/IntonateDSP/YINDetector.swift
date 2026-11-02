@@ -29,6 +29,9 @@ public struct YINConfiguration: Sendable, Equatable {
     public var maxFrequency: Double
     /// Dip depth on the normalised curve that counts as periodic (step 4).
     public var threshold: Float
+    /// When no dip crosses the threshold, take the first dip within this margin of the deepest one.
+    /// Plain YIN takes the deepest, which on a noisy frame is as often 2T or 3T as it is T.
+    public var fallbackMargin: Float
     public var difference: DifferenceMethod
     public var refinement: Refinement
 
@@ -38,6 +41,7 @@ public struct YINConfiguration: Sendable, Equatable {
         minFrequency: Double = 60,
         maxFrequency: Double = 1_400,
         threshold: Float = 0.15,
+        fallbackMargin: Float = 0.1,
         difference: DifferenceMethod = .fft,
         refinement: Refinement = .parabolicDifference
     ) {
@@ -48,6 +52,7 @@ public struct YINConfiguration: Sendable, Equatable {
         self.minFrequency = minFrequency
         self.maxFrequency = maxFrequency
         self.threshold = threshold
+        self.fallbackMargin = fallbackMargin
         self.difference = difference
         self.refinement = refinement
     }
@@ -171,22 +176,29 @@ public final class YINDetector {
     /// Step 4. Taking the first dip under the threshold, not the deepest, is what keeps YIN off the
     /// subharmonics: dips at 2T and 3T are about as deep as the dip at T.
     private func selectLag() -> (lag: Int, isPeriodic: Bool) {
+        if let lag = firstDip(below: configuration.threshold) {
+            return (lag, true)
+        }
         let first = configuration.minLag
-        var lag = first
+        var deepest = first
+        for candidate in first...maxLag where normalized[candidate] < normalized[deepest] {
+            deepest = candidate
+        }
+        return (firstDip(below: normalized[deepest] + configuration.fallbackMargin) ?? deepest, false)
+    }
+
+    private func firstDip(below limit: Float) -> Int? {
+        var lag = configuration.minLag
         while lag <= maxLag {
-            if normalized[lag] < configuration.threshold {
+            if normalized[lag] < limit {
                 while lag < maxLag, normalized[lag + 1] < normalized[lag] {
                     lag += 1
                 }
-                return (lag, true)
+                return lag
             }
             lag += 1
         }
-        var best = first
-        for candidate in first...maxLag where normalized[candidate] < normalized[best] {
-            best = candidate
-        }
-        return (best, false)
+        return nil
     }
 
     /// Step 5. Fits a parabola through the dip and its neighbours.

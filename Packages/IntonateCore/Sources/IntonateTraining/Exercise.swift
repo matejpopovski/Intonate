@@ -102,6 +102,13 @@ public struct TimedNote: Hashable, Sendable {
     public let midi: Int
     public let start: Double
     public let end: Double
+
+    public init(index: Int, midi: Int, start: Double, end: Double) {
+        self.index = index
+        self.midi = midi
+        self.start = start
+        self.end = end
+    }
 }
 
 /// An exercise laid out in seconds for one voice. Time zero is the first note, after any count-in.

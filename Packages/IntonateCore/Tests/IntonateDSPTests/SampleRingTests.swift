@@ -34,6 +34,16 @@ final class SampleRingTests: XCTestCase {
         XCTAssertEqual(output, [1, 2, 3, 4], "what was accepted must stay intact")
     }
 
+    func testRecordsAreWrittenWholeOrNotAtAll() {
+        let ring = SampleRing(minimumCapacity: 8)
+        let record: [Float] = [1, 2, 3]
+        XCTAssertTrue(ring.writeRecord(record, count: 3))
+        XCTAssertTrue(ring.writeRecord(record, count: 3))
+        XCTAssertFalse(ring.writeRecord(record, count: 3), "only two slots are free")
+        XCTAssertEqual(ring.availableToRead, 6, "a rejected record must leave nothing behind")
+        XCTAssertEqual(ring.droppedSamples, 3)
+    }
+
     func testReadFromEmptyRingReturnsNothing() {
         let ring = SampleRing(minimumCapacity: 4)
         var output: [Float] = [9]

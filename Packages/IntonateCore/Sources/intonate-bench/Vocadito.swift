@@ -30,6 +30,7 @@ struct VocaditoReport: Encodable {
     let detectorWithoutTrackerOnAllTracks: VocaditoRow
     let tuningGridBestFirst: [VocaditoRow]
     let tuningWindowSweep: [VocaditoRow]
+    let tuningFallbackMarginSweep: [VocaditoRow]
     let tuningMedianSweep: [VocaditoRow]
     let worstTracks: [VocaditoTrackRow]
 }
@@ -186,7 +187,7 @@ private func singers(root: URL) throws -> [String: String] {
 /// One estimate per reference frame: the reference has a value every 256 samples.
 private func configuration(
     dip: Float = 0.15,
-    voicing: Float = 0.25,
+    voicing: Float = 0.3,
     windowLength: Int? = nil,
     medianFrames: Int = 5
 ) -> AnalysisConfiguration {
@@ -242,6 +243,11 @@ func runVocadito(root: URL, output: URL) throws {
     let windowRows = [512, 768, 1_024, 2_048].map { (samples: Int) in
         merged(score(tuning, configuration(windowLength: samples))).row(label: "W = \(samples)", tracks: tuning.count)
     }
+    let marginRows = [Float(0), 0.05, 0.1, 0.15, 0.2].map { margin -> VocaditoRow in
+        var settings = configuration()
+        settings.yin.fallbackMargin = margin
+        return merged(score(tuning, settings)).row(label: "fallback margin \(margin)", tracks: tuning.count)
+    }
     let medianRows = [1, 3, 5, 9].map { frames in
         merged(score(tuning, configuration(medianFrames: frames)))
             .row(label: "median of \(frames)", tracks: tuning.count)
@@ -288,6 +294,7 @@ func runVocadito(root: URL, output: URL) throws {
                 .row(label: "YIN best guess on every frame", tracks: tracks.count),
             tuningGridBestFirst: grid,
             tuningWindowSweep: windowRows,
+            tuningFallbackMarginSweep: marginRows,
             tuningMedianSweep: medianRows,
             worstTracks: Array(worst)
         ),

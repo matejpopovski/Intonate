@@ -35,7 +35,7 @@ public struct PitchTrackerConfiguration: Sendable, Equatable {
 
     public init(
         silenceFloorDB: Float = -50,
-        maxAperiodicity: Float = 0.25,
+        maxAperiodicity: Float = 0.3,
         onsetFrames: Int = 2,
         medianFrames: Int = 5
     ) {

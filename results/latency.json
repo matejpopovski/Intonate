@@ -1,0 +1,274 @@
+{
+  "definition" : "Samples from the note change to the emission of the first tracker frame that is within 50 cents of the new note and stays there for three more frames. Excludes capture, scheduling and display.",
+  "fromSilence" : [
+    {
+      "label" : "vowelAh, noise floor at -70 dBFS",
+      "maxMs" : 41.38,
+      "missed" : 0,
+      "p50Ms" : 31.53,
+      "p95Ms" : 39.3,
+      "transitions" : 96
+    },
+    {
+      "label" : "bright, noise floor at -70 dBFS",
+      "maxMs" : 41.34,
+      "missed" : 0,
+      "p50Ms" : 31.53,
+      "p95Ms" : 38.44,
+      "transitions" : 96
+    }
+  ],
+  "host" : {
+    "cpu" : "Apple M3 Max",
+    "memoryGB" : 36,
+    "note" : "latency here is in audio time and does not depend on the machine",
+    "os" : "Version 26.6.2 (Build 25G83)"
+  },
+  "noteToNote" : [
+    {
+      "label" : "semitone up, vowelAh, 30 dB SNR",
+      "maxMs" : 47.03,
+      "missed" : 0,
+      "p50Ms" : 40.17,
+      "p95Ms" : 44.29,
+      "transitions" : 96
+    },
+    {
+      "label" : "semitone down, vowelAh, 30 dB SNR",
+      "maxMs" : 44.97,
+      "missed" : 0,
+      "p50Ms" : 40.29,
+      "p95Ms" : 43.84,
+      "transitions" : 96
+    },
+    {
+      "label" : "whole tone up, vowelAh, 30 dB SNR",
+      "maxMs" : 51.5,
+      "missed" : 0,
+      "p50Ms" : 43.8,
+      "p95Ms" : 48.74,
+      "transitions" : 96
+    },
+    {
+      "label" : "fifth up, vowelAh, 30 dB SNR",
+      "maxMs" : 54.42,
+      "missed" : 0,
+      "p50Ms" : 44.07,
+      "p95Ms" : 53.3,
+      "transitions" : 96
+    },
+    {
+      "label" : "fifth down, vowelAh, 30 dB SNR",
+      "maxMs" : 54.13,
+      "missed" : 0,
+      "p50Ms" : 40.48,
+      "p95Ms" : 51.4,
+      "transitions" : 96
+    },
+    {
+      "label" : "octave up, vowelAh, 30 dB SNR",
+      "maxMs" : 53.99,
+      "missed" : 0,
+      "p50Ms" : 47.6,
+      "p95Ms" : 52.12,
+      "transitions" : 80
+    },
+    {
+      "label" : "octave down, vowelAh, 30 dB SNR",
+      "maxMs" : 47.26,
+      "missed" : 0,
+      "p50Ms" : 39.05,
+      "p95Ms" : 44.84,
+      "transitions" : 80
+    }
+  ],
+  "pipeline" : {
+    "medianFrames" : 5,
+    "onsetFrames" : 2,
+    "pitchHopSamples" : 256,
+    "requiredSamples" : 1760,
+    "sampleRate" : 44100
+  },
+  "windowSweep" : [
+    {
+      "accuracy" : {
+        "frames" : 6272,
+        "grossErrorRate" : 0.00255,
+        "label" : "clean vowelAh",
+        "maxAbsCents" : 0.048,
+        "meanAbsCents" : 0.005,
+        "medianAbsCents" : 0.003,
+        "octaveErrorRate" : 0,
+        "p95AbsCents" : 0.02,
+        "rawPitchAccuracy50" : 0.9974,
+        "voicedRate" : 1
+      },
+      "accuracyAt20dB" : {
+        "frames" : 6272,
+        "grossErrorRate" : 0.00909,
+        "label" : "20 dB white",
+        "maxAbsCents" : 10.174,
+        "meanAbsCents" : 0.862,
+        "medianAbsCents" : 0.676,
+        "octaveErrorRate" : 0,
+        "p95AbsCents" : 2.315,
+        "rawPitchAccuracy50" : 0.9909,
+        "voicedRate" : 1
+      },
+      "stepLatency" : {
+        "label" : "mixed intervals, vowelAh, 30 dB SNR",
+        "maxMs" : 46.1,
+        "missed" : 0,
+        "p50Ms" : 34.84,
+        "p95Ms" : 41.2,
+        "transitions" : 368
+      },
+      "windowMs" : 11.6,
+      "windowSamples" : 512
+    },
+    {
+      "accuracy" : {
+        "frames" : 6272,
+        "grossErrorRate" : 0,
+        "label" : "clean vowelAh",
+        "maxAbsCents" : 0.035,
+        "meanAbsCents" : 0.004,
+        "medianAbsCents" : 0.002,
+        "octaveErrorRate" : 0,
+        "p95AbsCents" : 0.014,
+        "rawPitchAccuracy50" : 1,
+        "voicedRate" : 1
+      },
+      "accuracyAt20dB" : {
+        "frames" : 6272,
+        "grossErrorRate" : 0.00048,
+        "label" : "20 dB white",
+        "maxAbsCents" : 7.901,
+        "meanAbsCents" : 0.683,
+        "medianAbsCents" : 0.525,
+        "octaveErrorRate" : 0,
+        "p95AbsCents" : 1.898,
+        "rawPitchAccuracy50" : 0.9995,
+        "voicedRate" : 1
+      },
+      "stepLatency" : {
+        "label" : "mixed intervals, vowelAh, 30 dB SNR",
+        "maxMs" : 49,
+        "missed" : 0,
+        "p50Ms" : 39.09,
+        "p95Ms" : 46.16,
+        "transitions" : 368
+      },
+      "windowMs" : 17.4,
+      "windowSamples" : 768
+    },
+    {
+      "accuracy" : {
+        "frames" : 6272,
+        "grossErrorRate" : 0,
+        "label" : "clean vowelAh",
+        "maxAbsCents" : 0.03,
+        "meanAbsCents" : 0.003,
+        "medianAbsCents" : 0.002,
+        "octaveErrorRate" : 0,
+        "p95AbsCents" : 0.011,
+        "rawPitchAccuracy50" : 1,
+        "voicedRate" : 1
+      },
+      "accuracyAt20dB" : {
+        "frames" : 6272,
+        "grossErrorRate" : 0.00032,
+        "label" : "20 dB white",
+        "maxAbsCents" : 6.295,
+        "meanAbsCents" : 0.588,
+        "medianAbsCents" : 0.454,
+        "octaveErrorRate" : 0,
+        "p95AbsCents" : 1.615,
+        "rawPitchAccuracy50" : 0.9997,
+        "voicedRate" : 1
+      },
+      "stepLatency" : {
+        "label" : "mixed intervals, vowelAh, 30 dB SNR",
+        "maxMs" : 54.42,
+        "missed" : 0,
+        "p50Ms" : 43.47,
+        "p95Ms" : 51.96,
+        "transitions" : 368
+      },
+      "windowMs" : 23.2,
+      "windowSamples" : 1024
+    },
+    {
+      "accuracy" : {
+        "frames" : 6272,
+        "grossErrorRate" : 0,
+        "label" : "clean vowelAh",
+        "maxAbsCents" : 0.026,
+        "meanAbsCents" : 0.003,
+        "medianAbsCents" : 0.001,
+        "octaveErrorRate" : 0,
+        "p95AbsCents" : 0.01,
+        "rawPitchAccuracy50" : 1,
+        "voicedRate" : 1
+      },
+      "accuracyAt20dB" : {
+        "frames" : 6272,
+        "grossErrorRate" : 0,
+        "label" : "20 dB white",
+        "maxAbsCents" : 4.958,
+        "meanAbsCents" : 0.46,
+        "medianAbsCents" : 0.352,
+        "octaveErrorRate" : 0,
+        "p95AbsCents" : 1.274,
+        "rawPitchAccuracy50" : 1,
+        "voicedRate" : 1
+      },
+      "stepLatency" : {
+        "label" : "mixed intervals, vowelAh, 30 dB SNR",
+        "maxMs" : 65.58,
+        "missed" : 0,
+        "p50Ms" : 54.81,
+        "p95Ms" : 63.57,
+        "transitions" : 368
+      },
+      "windowMs" : 34.8,
+      "windowSamples" : 1536
+    },
+    {
+      "accuracy" : {
+        "frames" : 6272,
+        "grossErrorRate" : 0,
+        "label" : "clean vowelAh",
+        "maxAbsCents" : 0.022,
+        "meanAbsCents" : 0.002,
+        "medianAbsCents" : 0.001,
+        "octaveErrorRate" : 0,
+        "p95AbsCents" : 0.008,
+        "rawPitchAccuracy50" : 1,
+        "voicedRate" : 1
+      },
+      "accuracyAt20dB" : {
+        "frames" : 6272,
+        "grossErrorRate" : 0,
+        "label" : "20 dB white",
+        "maxAbsCents" : 3.446,
+        "meanAbsCents" : 0.39,
+        "medianAbsCents" : 0.3,
+        "octaveErrorRate" : 0,
+        "p95AbsCents" : 1.075,
+        "rawPitchAccuracy50" : 1,
+        "voicedRate" : 1
+      },
+      "stepLatency" : {
+        "label" : "mixed intervals, vowelAh, 30 dB SNR",
+        "maxMs" : 76.3,
+        "missed" : 0,
+        "p50Ms" : 64.43,
+        "p95Ms" : 74.29,
+        "transitions" : 368
+      },
+      "windowMs" : 46.4,
+      "windowSamples" : 2048
+    }
+  ]
+}

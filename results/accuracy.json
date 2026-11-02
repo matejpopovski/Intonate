@@ -1,0 +1,650 @@
+{
+  "at48kHz" : {
+    "frames" : 6272,
+    "grossErrorRate" : 0,
+    "label" : "48 kHz vowelAh",
+    "maxAbsCents" : 0.021,
+    "meanAbsCents" : 0.003,
+    "medianAbsCents" : 0.001,
+    "octaveErrorRate" : 0,
+    "p95AbsCents" : 0.01,
+    "rawPitchAccuracy50" : 1,
+    "voicedRate" : 1
+  },
+  "byRegister" : [
+    {
+      "frames" : 1536,
+      "grossErrorRate" : 0,
+      "label" : "C2-B2",
+      "maxAbsCents" : 0.007,
+      "meanAbsCents" : 0.001,
+      "medianAbsCents" : 0.001,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.003,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 1536,
+      "grossErrorRate" : 0,
+      "label" : "C3-B3",
+      "maxAbsCents" : 0.016,
+      "meanAbsCents" : 0.002,
+      "medianAbsCents" : 0.001,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.005,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 1536,
+      "grossErrorRate" : 0,
+      "label" : "C4-B4",
+      "maxAbsCents" : 0.018,
+      "meanAbsCents" : 0.003,
+      "medianAbsCents" : 0.003,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.01,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 1664,
+      "grossErrorRate" : 0,
+      "label" : "C5-C6",
+      "maxAbsCents" : 0.03,
+      "meanAbsCents" : 0.006,
+      "medianAbsCents" : 0.005,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.018,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    }
+  ],
+  "byRegisterAt20dB" : [
+    {
+      "frames" : 1536,
+      "grossErrorRate" : 0.00326,
+      "label" : "C2-B2",
+      "maxAbsCents" : 4.908,
+      "meanAbsCents" : 0.785,
+      "medianAbsCents" : 0.605,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 2.078,
+      "rawPitchAccuracy50" : 0.9967,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 1536,
+      "grossErrorRate" : 0,
+      "label" : "C3-B3",
+      "maxAbsCents" : 2.41,
+      "meanAbsCents" : 0.415,
+      "medianAbsCents" : 0.336,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 1.045,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 1536,
+      "grossErrorRate" : 0,
+      "label" : "C4-B4",
+      "maxAbsCents" : 3.112,
+      "meanAbsCents" : 0.441,
+      "medianAbsCents" : 0.343,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 1.172,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 1664,
+      "grossErrorRate" : 0,
+      "label" : "C5-C6",
+      "maxAbsCents" : 3.291,
+      "meanAbsCents" : 0.634,
+      "medianAbsCents" : 0.512,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 1.691,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    }
+  ],
+  "bySNRPink" : [
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0,
+      "label" : "40 dB pink",
+      "maxAbsCents" : 0.377,
+      "meanAbsCents" : 0.048,
+      "medianAbsCents" : 0.037,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.127,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0,
+      "label" : "30 dB pink",
+      "maxAbsCents" : 1.184,
+      "meanAbsCents" : 0.153,
+      "medianAbsCents" : 0.119,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.401,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0.00048,
+      "label" : "20 dB pink",
+      "maxAbsCents" : 3.896,
+      "meanAbsCents" : 0.504,
+      "medianAbsCents" : 0.387,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 1.328,
+      "rawPitchAccuracy50" : 0.9995,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0.0008,
+      "label" : "15 dB pink",
+      "maxAbsCents" : 9.015,
+      "meanAbsCents" : 0.971,
+      "medianAbsCents" : 0.756,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 2.638,
+      "rawPitchAccuracy50" : 0.9992,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0.00144,
+      "label" : "10 dB pink",
+      "maxAbsCents" : 28.054,
+      "meanAbsCents" : 2.109,
+      "medianAbsCents" : 1.601,
+      "octaveErrorRate" : 0.00016,
+      "p95AbsCents" : 5.747,
+      "rawPitchAccuracy50" : 0.9963,
+      "voicedRate" : 0.9979
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0.12445,
+      "label" : "5 dB pink",
+      "maxAbsCents" : 32.506,
+      "meanAbsCents" : 4.237,
+      "medianAbsCents" : 3.382,
+      "octaveErrorRate" : 0.1218,
+      "p95AbsCents" : 11.25,
+      "rawPitchAccuracy50" : 0.1362,
+      "voicedRate" : 0.1806
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0,
+      "label" : "0 dB pink",
+      "octaveErrorRate" : 0,
+      "rawPitchAccuracy50" : 0,
+      "voicedRate" : 0
+    }
+  ],
+  "bySNRWhite" : [
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0,
+      "label" : "40 dB white",
+      "maxAbsCents" : 0.134,
+      "meanAbsCents" : 0.022,
+      "medianAbsCents" : 0.018,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.057,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0,
+      "label" : "30 dB white",
+      "maxAbsCents" : 0.688,
+      "meanAbsCents" : 0.086,
+      "medianAbsCents" : 0.069,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.228,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0.00048,
+      "label" : "20 dB white",
+      "maxAbsCents" : 5.014,
+      "meanAbsCents" : 0.562,
+      "medianAbsCents" : 0.426,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 1.541,
+      "rawPitchAccuracy50" : 0.9995,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0.00494,
+      "label" : "15 dB white",
+      "maxAbsCents" : 20.024,
+      "meanAbsCents" : 1.782,
+      "medianAbsCents" : 1.257,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 5.172,
+      "rawPitchAccuracy50" : 0.9951,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0.00415,
+      "label" : "10 dB white",
+      "maxAbsCents" : 49.714,
+      "meanAbsCents" : 7.382,
+      "medianAbsCents" : 4.424,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 27.66,
+      "rawPitchAccuracy50" : 0.9959,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0,
+      "label" : "5 dB white",
+      "octaveErrorRate" : 0,
+      "rawPitchAccuracy50" : 0,
+      "voicedRate" : 0
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0,
+      "label" : "0 dB white",
+      "octaveErrorRate" : 0,
+      "rawPitchAccuracy50" : 0,
+      "voicedRate" : 0
+    }
+  ],
+  "byTimbre" : [
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0,
+      "label" : "sine",
+      "maxAbsCents" : 0.03,
+      "meanAbsCents" : 0.003,
+      "medianAbsCents" : 0.001,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.01,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0,
+      "label" : "bright",
+      "maxAbsCents" : 1.787,
+      "meanAbsCents" : 0.29,
+      "medianAbsCents" : 0.075,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 1.161,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0,
+      "label" : "vowelAh",
+      "maxAbsCents" : 0.031,
+      "meanAbsCents" : 0.003,
+      "medianAbsCents" : 0.002,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.012,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0,
+      "label" : "vowelEe",
+      "maxAbsCents" : 0.069,
+      "meanAbsCents" : 0.005,
+      "medianAbsCents" : 0.001,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.022,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0,
+      "label" : "weakFundamental",
+      "maxAbsCents" : 1.451,
+      "meanAbsCents" : 0.242,
+      "medianAbsCents" : 0.066,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.949,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    }
+  ],
+  "byVibrato" : [
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0,
+      "label" : "±25 cents at 5.5 Hz",
+      "maxAbsCents" : 2.171,
+      "meanAbsCents" : 0.486,
+      "medianAbsCents" : 0.519,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.883,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0,
+      "label" : "±50 cents at 5.5 Hz",
+      "maxAbsCents" : 4.376,
+      "meanAbsCents" : 0.974,
+      "medianAbsCents" : 1.038,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 1.743,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 6272,
+      "grossErrorRate" : 0,
+      "label" : "±100 cents at 5.5 Hz",
+      "maxAbsCents" : 9.016,
+      "meanAbsCents" : 1.977,
+      "medianAbsCents" : 2.108,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 3.548,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    }
+  ],
+  "grid" : "MIDI 36-84, 16 clips per note, 8 frames per clip, random detune within ±50 cents, YIN defaults, 44.1 kHz unless stated",
+  "host" : {
+    "cpu" : "Apple M3 Max",
+    "memoryGB" : 36,
+    "note" : "accuracy figures are machine independent; signals are seeded",
+    "os" : "Version 26.6.2 (Build 25G83)"
+  },
+  "trackerBySNRPink" : [
+    {
+      "frames" : 8280,
+      "grossErrorRate" : 0,
+      "label" : "40 dB pink",
+      "maxAbsCents" : 0.217,
+      "meanAbsCents" : 0.027,
+      "medianAbsCents" : 0.02,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.075,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 8280,
+      "grossErrorRate" : 0,
+      "label" : "30 dB pink",
+      "maxAbsCents" : 0.704,
+      "meanAbsCents" : 0.084,
+      "medianAbsCents" : 0.063,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.244,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 8280,
+      "grossErrorRate" : 0,
+      "label" : "20 dB pink",
+      "maxAbsCents" : 2.072,
+      "meanAbsCents" : 0.291,
+      "medianAbsCents" : 0.215,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.824,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 8280,
+      "grossErrorRate" : 0,
+      "label" : "15 dB pink",
+      "maxAbsCents" : 4.364,
+      "meanAbsCents" : 0.608,
+      "medianAbsCents" : 0.464,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 1.688,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 8280,
+      "grossErrorRate" : 0,
+      "label" : "10 dB pink",
+      "maxAbsCents" : 25.527,
+      "meanAbsCents" : 1.51,
+      "medianAbsCents" : 1.119,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 4.093,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 8328,
+      "grossErrorRate" : 0.02264,
+      "label" : "5 dB pink",
+      "maxAbsCents" : 49.706,
+      "meanAbsCents" : 4.345,
+      "medianAbsCents" : 3.263,
+      "octaveErrorRate" : 0.02123,
+      "p95AbsCents" : 12.033,
+      "rawPitchAccuracy50" : 0.8924,
+      "voicedRate" : 0.9334
+    },
+    {
+      "frames" : 8679,
+      "grossErrorRate" : 0,
+      "label" : "0 dB pink",
+      "maxAbsCents" : 26.437,
+      "meanAbsCents" : 6.745,
+      "medianAbsCents" : 5.366,
+      "octaveErrorRate" : 0.09091,
+      "p95AbsCents" : 16.423,
+      "rawPitchAccuracy50" : 0.0046,
+      "voicedRate" : 0.0051
+    }
+  ],
+  "trackerBySNRWhite" : [
+    {
+      "frames" : 8280,
+      "grossErrorRate" : 0,
+      "label" : "40 dB white",
+      "maxAbsCents" : 0.088,
+      "meanAbsCents" : 0.013,
+      "medianAbsCents" : 0.01,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.034,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 8280,
+      "grossErrorRate" : 0,
+      "label" : "30 dB white",
+      "maxAbsCents" : 0.485,
+      "meanAbsCents" : 0.059,
+      "medianAbsCents" : 0.047,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.158,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 8280,
+      "grossErrorRate" : 0,
+      "label" : "20 dB white",
+      "maxAbsCents" : 6.049,
+      "meanAbsCents" : 0.449,
+      "medianAbsCents" : 0.349,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 1.226,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 8280,
+      "grossErrorRate" : 0.0029,
+      "label" : "15 dB white",
+      "maxAbsCents" : 18.61,
+      "meanAbsCents" : 1.522,
+      "medianAbsCents" : 1.06,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 4.42,
+      "rawPitchAccuracy50" : 0.9971,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 8280,
+      "grossErrorRate" : 0.00145,
+      "label" : "10 dB white",
+      "maxAbsCents" : 49.988,
+      "meanAbsCents" : 6.866,
+      "medianAbsCents" : 3.909,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 27.574,
+      "rawPitchAccuracy50" : 0.9986,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 8370,
+      "grossErrorRate" : 0.02831,
+      "label" : "5 dB white",
+      "maxAbsCents" : 49.995,
+      "meanAbsCents" : 16.156,
+      "medianAbsCents" : 13.797,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 39.041,
+      "rawPitchAccuracy50" : 0.7587,
+      "voicedRate" : 0.7808
+    },
+    {
+      "frames" : 8670,
+      "grossErrorRate" : 0,
+      "label" : "0 dB white",
+      "octaveErrorRate" : 0,
+      "rawPitchAccuracy50" : 0,
+      "voicedRate" : 0
+    }
+  ],
+  "trackerByTimbre" : [
+    {
+      "frames" : 8280,
+      "grossErrorRate" : 0,
+      "label" : "sine",
+      "maxAbsCents" : 0.019,
+      "meanAbsCents" : 0.002,
+      "medianAbsCents" : 0.001,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.008,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 8280,
+      "grossErrorRate" : 0,
+      "label" : "bright",
+      "maxAbsCents" : 1.769,
+      "meanAbsCents" : 0.291,
+      "medianAbsCents" : 0.09,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 1.116,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 8280,
+      "grossErrorRate" : 0,
+      "label" : "vowelAh",
+      "maxAbsCents" : 0.02,
+      "meanAbsCents" : 0.002,
+      "medianAbsCents" : 0.001,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.008,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 8280,
+      "grossErrorRate" : 0,
+      "label" : "vowelEe",
+      "maxAbsCents" : 0.051,
+      "meanAbsCents" : 0.003,
+      "medianAbsCents" : 0.001,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.018,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 8280,
+      "grossErrorRate" : 0,
+      "label" : "weakFundamental",
+      "maxAbsCents" : 1.448,
+      "meanAbsCents" : 0.243,
+      "medianAbsCents" : 0.075,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 0.914,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    }
+  ],
+  "trackerByVibrato" : [
+    {
+      "frames" : 8281,
+      "grossErrorRate" : 0,
+      "label" : "±25 cents at 5.5 Hz",
+      "maxAbsCents" : 2.289,
+      "meanAbsCents" : 0.565,
+      "medianAbsCents" : 0.52,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 1.437,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 8281,
+      "grossErrorRate" : 0,
+      "label" : "±50 cents at 5.5 Hz",
+      "maxAbsCents" : 4.668,
+      "meanAbsCents" : 1.137,
+      "medianAbsCents" : 1.043,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 2.873,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    },
+    {
+      "frames" : 8281,
+      "grossErrorRate" : 0,
+      "label" : "±100 cents at 5.5 Hz",
+      "maxAbsCents" : 9.629,
+      "meanAbsCents" : 2.283,
+      "medianAbsCents" : 2.098,
+      "octaveErrorRate" : 0,
+      "p95AbsCents" : 5.748,
+      "rawPitchAccuracy50" : 1,
+      "voicedRate" : 1
+    }
+  ],
+  "trackerNote" : "tracker* rows run the whole pipeline on 0.4 s sustained notes, skipping the first 120 ms. The other rows are the detector alone, on isolated frames, where voicedRate is the dip threshold's decision."
+}
