@@ -1,0 +1,13 @@
+# Xcode and SwiftPM build output
+build/
+DerivedData/
+.build/
+.swiftpm/
+*.xcresult
+xcuserdata/
+*.xcuserstate
+
+# The vocadito recordings are downloaded by scripts/fetch-vocadito.sh and not redistributed here.
+/data/
+
+.DS_Store
