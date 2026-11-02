@@ -11,7 +11,7 @@ let width = 300.0
 
 let group = DispatchGroup()
 group.enter()
-Task {
+_ = Task {
     defer { group.leave() }
     let asset = AVURLAsset(url: input)
     let seconds = try await asset.load(.duration).seconds

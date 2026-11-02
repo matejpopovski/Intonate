@@ -88,11 +88,12 @@ final class TrainerSession {
                 )
             }
             rendererSetupMilliseconds = HostClock.milliseconds(from: began, to: mach_continuous_time())
+            self.engine = engine
             engine.start(plan: AnalysisEngine.Plan(timeline: timeline, leadIn: leadIn))
             try input.start(writingTo: engine.ring)
             self.input = input
-            self.engine = engine
         } catch {
+            engine?.stop()
             phase = .failed(error.localizedDescription)
             return
         }
